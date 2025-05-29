@@ -8,6 +8,7 @@ int cmp(const void *a, const void *b) {
     return *num1 - *num2;
 }
 
+// 排序：h初始化为0；将数组升序排序后，从后往前遍历，若当前遍历到的文献引用数大于h，则h+1
 int hIndex(int *citations, int citationsSize) {
     qsort(citations, citationsSize, sizeof(int), cmp);
     int h = 0, i = citationsSize - 1;
