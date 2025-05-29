@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+// 双向链表，使用频率高的在头部，频率低的在尾部
 typedef struct DLinkedNode {
     int key;
     int value;
@@ -34,7 +35,7 @@ LRUCache* lRUCacheCreate(int capacity) {
     cache->tail = createNode(-1, -1);
     cache->head->next = cache->tail;
     cache->tail->prev = cache->head;
-    cache->hash = (DLinkedNode**)calloc(10001, sizeof(DLinkedNode*));
+    cache->hash = (DLinkedNode**)calloc(10001, sizeof(DLinkedNode*));// hash表，用于存储键值对
     return cache;
 }
 

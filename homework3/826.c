@@ -11,6 +11,7 @@ int compare(const void *a, const void *b) {
     return pairA->key - pairB->key;
 }
 
+// 贪心思想：找到每个工人能完成的、且报酬最多的那一份工作
 int maxProfitAssignment(int* difficulty, int difficultySize, int* profit, int profitSize, int* worker, int workerSize) {
     int res = 0;
     Pair *works = (Pair*)malloc(sizeof(Pair) * difficultySize);
